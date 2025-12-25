@@ -38,7 +38,7 @@ Multiple models were tested to predict future food prices and evaluate which app
 4. ARIMA / SARIMA (time‑series)
 5. XGBoost Regressor
 
-**Best-performing model:** Random Forest Regressor delivered the strongest performance based on RMSE, and R-squared. The model handled non‑linear relationships and regional variability more effectively than linear regression.
+**Best-performing model:** XGBoost Regressor delivered the strongest performance based on RMSE, and R-squared. The model handled non‑linear relationships and regional variability more effectively than the other algorithms.
 
 
 ## Geospatial Analysis with Folium
