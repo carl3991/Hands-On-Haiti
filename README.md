@@ -1,6 +1,6 @@
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-# Hands-On Haiti: Food Price Modeling & Geospatial Insights
+# Hands-On Haiti Food Economy: Staple Price Modeling & Geospatial Insights
 
 This project analyzes food price dynamics in Haiti using a full data‑science workflow that blends exploratory data analysis, time‑series exploration, machine‑learning modeling, and geospatial visualization. The goal is to understand how staple food prices evolve across regions and time, identify the strongest predictive models, and communicate insights in a way that is accessible to both technical and non‑technical audiences.
 
