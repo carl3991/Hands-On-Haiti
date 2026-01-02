@@ -1,8 +1,7 @@
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 # Hands-On Haiti Food Economy: Staple Price Modeling & Geospatial Insights
-
-This project analyzes food price dynamics in Haiti using a full data‑science workflow that blends exploratory data analysis, time‑series exploration, machine‑learning modeling, and geospatial visualization. The goal is to understand how staple food prices evolve across regions and time, identify the strongest predictive models, and communicate insights in a way that is accessible to both technical and non‑technical audiences.
+This project aims to understand trends in food affordability in Haiti by examining historical price data from 2005 to 2023, with a focus on identifying regional disparities such as the consistently higher prices in Artibonite and North‑West before 2015, and connecting these movements to national shocks like the COVID‑19 pandemic and worsening security conditions. The analysis matters because it reveals how localized challenges gradually evolved into a shared national crisis, where inflation, gang violence, and heavy dependence on imports amplified vulnerabilities across all regions. By blending statistical evidence with real‑world context, the notebook transforms raw data into a compelling narrative of economic fragility and resilience, demonstrating how Haiti’s food markets reflect both regional inequalities and the broader pressures of global and domestic instability.
 
 ## Exploratory Data Analysis (EDA)
 The analysis begins with a structured EDA to understand the distribution, variability, and seasonality of unit measurements and key food items such as rice, beans, maize, and cooking oil.
