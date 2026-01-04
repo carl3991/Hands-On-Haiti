@@ -1,68 +1,54 @@
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+# Hands On Haiti Food Economy: Staple Price Modeling & Geospatial Insights
+<br></br>
+## 1. Problem Statement
+Haiti’s food markets have faced persistent instability driven by inflation, import dependence, and regional inequality. This project analyzes nearly two decades of food price data (2005–2023) to understand how affordability has changed over time and why certain departments, such as Artibonite and North West, consistently experience higher prices. The goal is to uncover the structural and shock-driven forces shaping food access across the country.
+## 2. Why This Matters
+Food affordability is central to household well-being, yet Haiti’s markets are highly vulnerable to global price swings, currency depreciation, and domestic insecurity. By examining long term trends and regional disparities, this project highlights how localized challenges have evolved into a nationwide crisis. The analysis blends statistical evidence with real-world context to support more informed policy, humanitarian planning, and economic decision-making.
+## 3. Data Source
+The project uses historical food price data collected across Haiti’s ten departments from 2005 to 2023. The dataset was obtained from Kaggle, but the original source is the World Food Programme (WFP), which conducts regular market monitoring across the country.
+The dataset includes:
+•	Market level observations
+•	Unit measurements and commodity types
+•	Prices ($) for staples such as rice, beans, maize, and cooking oil
 
-# Hands-On Haiti Food Economy: Staple Price Modeling & Geospatial Insights
-This project aims to understand trends in food affordability in Haiti by examining historical price data from 2005 to 2023, with a focus on identifying regional disparities such as the consistently higher prices in Artibonite and North‑West before 2015, and connecting these movements to national shocks like the COVID‑19 pandemic and worsening security conditions. The analysis matters because it reveals how localized challenges gradually evolved into a shared national crisis, where inflation, gang violence, and heavy dependence on imports amplified vulnerabilities across all regions. By blending statistical evidence with real‑world context, the notebook transforms raw data into a compelling narrative of economic fragility and resilience, demonstrating how Haiti’s food markets reflect both regional inequalities and the broader pressures of global and domestic instability.
+## 4. Modeling Approach
 
-## Exploratory Data Analysis (EDA)
-The analysis begins with a structured EDA to understand the distribution, variability, and seasonality of unit measurements and key food items such as rice, beans, maize, and cooking oil.
+### Exploratory Data Analysis (EDA)
+•	Cleaning the date column and extracting year and month for improved temporal analysis
+•	Visualizing distributions (boxplots, KDE plots, histograms)
+•	Identifying outliers and regional disparities
+### Time Series Analysis
+•	Trend, seasonality, and residual decomposition
+•	Rolling averages and volatility analysis
+•	Stationarity testing (ADF)
+•	ACF/PACF diagnostics for model selection
+### Machine Learning Models
+Models tested for price prediction include:
+•	Multiple Linear Regression (Logged Price)
+•	Gradient Boost
+•	Random Forest Regressor
+•	ARIMA / SARIMA
+•	XGBoost Regressor
+Best model: XGBoost Regressor, based on RMSE and R-square, capturing non linear relationships and regional variability most effectively.
+### Geospatial Analysis (Folium)
+•	Department level choropleth maps
+•	Market level marker clusters
+•	Commodity weight overlays for high cost regions
 
-Key steps include:
+## 5. Key Insights
+•	Prices show a strong upward trend, with clear structural inflation over time.
+•	Artibonite and North West consistently rank among the most expensive regions.
+•	After 2019, national shocks (COVID 19 and rising insecurity) pushed prices upward across all departments.
+•	Weight heavy commodities reveal which staples contribute most to overall price pressure in the regions with the highest costs.
+•	XGBoost outperformed other models in capturing non linear and region specific patterns.
 
-1. Cleaning and standardizing price data across markets and departments
+## 6. Model Performance
+•	XGBoost Regressor delivered the best predictive accuracy.
+•	Random Forest performed well but showed slightly higher variance.
+•	Linear Regression struggled with non linear relationships and regional heterogeneity.
+•	Time series diagnostics confirmed strong trend components and irregular shocks across departments.
 
-2. Visualizing distributions using boxplots, KDE plots, and histograms
+## 7. Limitations & Next Steps
+•	Incorporating transportation routes, road quality, or distance to ports could improve modeling.
+•	Future work may include more external variables (exchange rate and import volumes)
 
-3. Identifying outliers and regional disparities
-
-4. Examining correlations between commodities and market locations
-
-
-
-## Time Series Analysis
-To understand how prices evolve over time, the project includes a full time‑series exploration:
-
-1. Trend, seasonality, and noise decomposition
-2. Rolling averages and volatility analysis
-3. Stationarity testing (ADF)
-4. Autocorrelation and partial autocorrelation diagnostics
-
-These diagnostics guide model selection and help determine whether prices follow predictable seasonal cycles or respond more to shocks and structural changes.
-
-## Machine Learning Models
-Multiple models were tested to predict future food prices and evaluate which approach best captures Haiti's market behavior.
-
-**Models attempted:**
-
-1. Multiple Linear Regression
-2. Gradient Boost
-3. Random Forest Regressor
-4. ARIMA / SARIMA (time‑series)
-5. XGBoost Regressor
-
-**Best-performing model:** XGBoost Regressor delivered the strongest performance based on RMSE, and R-squared. The model handled non‑linear relationships and regional variability more effectively than the other algorithms.
-
-
-## Geospatial Analysis with Folium
-To visualize how food prices vary across Haiti’s department, the project integrates Folium for interactive mapping.
-
-Geospatial components include:
-
-* Mapping markets and departments
-* Choropleth maps showing average prices by region
-* Marker clusters for individual market observations
-
-In addition to mapping median food prices by department (blue circle markers), I incorporated commodity weight information as a secondary marker layer. These weights appear as red circle markers nested inside the departmental clusters, highlighting the relative importance of key staples. 
-To keep the visualization focused, weight markers were added only for the two most expensive departments, and for two staple commodities in each department whose weights represented more than one‑third of the total commodity basket. These maps help reveal spatial inequalities, regional hotspots, and potential logistical and economic drivers behind price differences.
-
-## Project Outcomes
-This project provides:
-
-* A reproducible, well‑documented workflow
-
-* Clear visualizations for both technical and public audiences
-
-* A comparison of modeling approaches with a justified best model
-
-* Cultural and economic context to ground the findings
-
-* Interactive geospatial tools to support policy and humanitarian decision‑making
