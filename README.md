@@ -29,6 +29,7 @@ Models tested for price prediction include:
 *	Random Forest Regressor
 *	ARIMA / SARIMA
 *	XGBoost Regressor
+  
 **Best model: XGBoost Regressor, based on RMSE and R-square, capturing non linear relationships and regional variability most effectively.**
 ### Geospatial Analysis (Folium)
 *	Department level choropleth maps
